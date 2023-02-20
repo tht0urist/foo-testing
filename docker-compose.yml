@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  foo-db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: 'oualid'
+      POSTGRES_PASSWORD: 'oualid'
+      POSTGRES_ROOT_PASSWORD: 'root'
+    ports:
+      - '5432:5432'
