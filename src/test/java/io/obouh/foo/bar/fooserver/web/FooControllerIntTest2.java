@@ -19,7 +19,7 @@ public class FooControllerIntTest2 extends TestContainersTestConfiguration {
     private FooController fooController;
 
     @Test
-    public void shoud_get_greetings() throws Exception{
+    public void should_get_greetings() throws Exception{
         // Given
         this.mockMvc = MockMvcBuilders.standaloneSetup(fooController).build();
 

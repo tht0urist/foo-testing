@@ -15,7 +15,7 @@ public class FooController {
 
     @GetMapping("/hello")
     public String helloByName(@RequestParam(name = "name")String name){
-        return "Hi "+name;
+        return "Hi " + name;
     }
 
     @GetMapping("/hello/{id}")

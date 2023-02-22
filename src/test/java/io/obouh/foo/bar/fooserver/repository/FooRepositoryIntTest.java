@@ -14,7 +14,7 @@ public class FooRepositoryIntTest extends TestContainersJpaTestConfiguration {
     private FooRepository fooRepository;
 
     @Test
-    public void shoudl_save_foo(){
+    public void should_save_foo(){
         // Given
         Foo foo = new Foo();
         foo.setName("Oualid");
@@ -26,7 +26,6 @@ public class FooRepositoryIntTest extends TestContainersJpaTestConfiguration {
 
         // Then
         assertThat(foo.getId()).isNotNull();
-        assertThat(foo.getId()).isNotNull();
-        assertThat(countAfterSave).isEqualTo(countBeforeSave+1);
+        assertThat(countAfterSave).isEqualTo(countBeforeSave + 1);
     }
 }
