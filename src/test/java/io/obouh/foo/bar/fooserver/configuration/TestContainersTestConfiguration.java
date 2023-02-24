@@ -13,7 +13,6 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ContextConfiguration(initializers = TestContainersTestConfiguration.DataSourceInitializer.class)
-@SpringBootTest
 public class TestContainersTestConfiguration {
 
     @Container

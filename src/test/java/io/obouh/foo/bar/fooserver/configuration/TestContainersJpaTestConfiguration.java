@@ -13,7 +13,6 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ContextConfiguration(initializers = TestContainersJpaTestConfiguration.DataSourceInitializer.class)
-@DataJpaTest
 public class TestContainersJpaTestConfiguration {
     @Container
     private static final PostgreSQLContainer<?> database = new PostgreSQLContainer<>("postgres:12.9-alpine");

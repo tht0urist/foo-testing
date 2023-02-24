@@ -2,32 +2,26 @@ package io.obouh.foo.bar.fooserver.web;
 
 import io.obouh.foo.bar.fooserver.domains.Foo;
 import io.obouh.foo.bar.fooserver.services.FooService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
+@WebMvcTest(FooController.class)
 public class FooControllerIntTest {
 
+    @Autowired
     private MockMvc mockMvc;
 
     @MockBean
     private FooService fooService;
-
-    @BeforeEach
-    public void init(){
-        FooController fooController = new FooController(fooService);
-        mockMvc = MockMvcBuilders.standaloneSetup(fooController).build();
-    }
 
     @Test
     public void shoud_get_greetings_using_name() throws Exception{
